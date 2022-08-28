@@ -89,9 +89,9 @@ foreign import themeClassName :: Theme -> String
 
 foreign import themeIsDark :: Theme -> Boolean
 
-foreign import useTheme_ :: Effect Theme
+foreign import useTheme_ :: Effect { theme :: Theme, isDark :: Boolean}
 
-useTheme :: Hook (UseTheme) Theme
+useTheme :: Hook (UseTheme) { theme :: Theme, isDark :: Boolean }
 useTheme = unsafeHook useTheme_
 
 foreign import data UseTheme :: Type -> Type
