@@ -1,5 +1,6 @@
 module NextUI.NextUI
   ( Theme
+  , UseNextTheme
   , UseTheme
   , button
   , card
@@ -14,9 +15,12 @@ module NextUI.NextUI
   , loading
   , navbar
   , navbarBrand
+  , navbarCollapse
+  , navbarCollapseItem
   , navbarContent
   , navbarItem
   , navbarLink
+  , navbarToggle
   , nextThemesProvider
   , nextUIProvider
   , pagination
@@ -28,12 +32,15 @@ module NextUI.NextUI
   , textArea
   , themeClassName
   , themeIsDark
+  , useNextTheme
   , useTheme
-  ) where
+  )
+  where
 
 import Prelude
 
 import Effect (Effect)
+import Effect.Uncurried (EffectFn1, runEffectFn1)
 import Prim.Row (class Lacks)
 import React.Basic.Hooks (Hook, JSX, ReactComponent, unsafeHook)
 
@@ -80,6 +87,9 @@ foreign import navbarBrand :: forall props. ReactComponent { | props }
 foreign import navbarLink :: forall props. ReactComponent { | props }
 foreign import navbarContent :: forall props. ReactComponent { | props }
 foreign import navbarItem :: forall props. ReactComponent { | props }
+foreign import navbarToggle :: forall props. ReactComponent { | props }
+foreign import navbarCollapse :: forall props. ReactComponent { | props }
+foreign import navbarCollapseItem :: forall props. ReactComponent { | props }
 
 foreign import createTheme :: forall props. { | props } -> Effect Theme
 
@@ -89,9 +99,16 @@ foreign import themeClassName :: Theme -> String
 
 foreign import themeIsDark :: Theme -> Boolean
 
-foreign import useTheme_ :: Effect { theme :: Theme, isDark :: Boolean}
+foreign import useTheme_ :: Effect { theme :: Theme, isDark :: Boolean }
 
-useTheme :: Hook (UseTheme) { theme :: Theme, isDark :: Boolean }
+useTheme :: Hook (UseTheme) { theme :: Theme, isDark :: Boolean  }
 useTheme = unsafeHook useTheme_
 
 foreign import data UseTheme :: Type -> Type
+
+foreign import useNextTheme_ :: Effect { theme :: Theme, isDark :: Boolean, setTheme :: EffectFn1 String Unit }
+
+useNextTheme :: Hook (UseNextTheme) { theme :: Theme, isDark :: Boolean, setTheme :: String -> Effect Unit  }
+useNextTheme = unsafeHook useNextTheme_ <#> \{ theme, isDark, setTheme } -> { theme, isDark, setTheme: runEffectFn1 setTheme }
+
+foreign import data UseNextTheme :: Type -> Type
