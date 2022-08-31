@@ -23,6 +23,7 @@ import {
   NavBar,
   createTheme as createTheme_,
   Navbar,
+  Button
 } from "@nextui-org/react";
 
 export { ThemeProvider as nextThemesProvider, useTheme as useNextTheme_ } from "next-themes";
@@ -34,7 +35,10 @@ export const grid = Grid;
 export const gridContainer = Grid.Container;
 
 export const card = Card;
+export const cardHeader = Card.Header;
 export const cardBody = Card.Body;
+export const cardFooter = Card.Footer;
+
 export const navbarBrand = Navbar.Brand;
 export const navbarContent = Navbar.Content;
 export const navbarLink = Navbar.Link;
@@ -42,3 +46,5 @@ export const navbarItem = Navbar.Item;
 export const navbarToggle = Navbar.Toggle;
 export const navbarCollapseItem = Navbar.CollapseItem;
 export const navbarCollapse = Navbar.Collapse;
+
+export const buttonGroup = Button.Group

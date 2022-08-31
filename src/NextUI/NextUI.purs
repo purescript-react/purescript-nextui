@@ -3,8 +3,11 @@ module NextUI.NextUI
   , UseNextTheme
   , UseTheme
   , button
+  , buttonGroup
   , card
   , cardBody
+  , cardFooter
+  , cardHeader
   , col
   , container
   , createTheme
@@ -50,6 +53,8 @@ foreign import nextUIProvider :: forall props. ReactComponent { children :: Arra
 
 foreign import button :: forall props. ReactComponent { | props }
 
+foreign import buttonGroup :: forall props. ReactComponent { | props }
+
 foreign import switch :: forall props. ReactComponent { | props }
 
 foreign import container :: forall props. ReactComponent { | props }
@@ -78,7 +83,9 @@ foreign import loading :: forall props. ReactComponent { | props }
 
 foreign import card :: forall props. ReactComponent { | props }
 
+foreign import cardHeader :: forall props. ReactComponent { | props }
 foreign import cardBody :: forall props. ReactComponent { | props }
+foreign import cardFooter :: forall props. ReactComponent { | props }
 
 foreign import pagination :: forall props. ReactComponent { | props }
 
