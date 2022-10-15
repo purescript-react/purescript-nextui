@@ -2,15 +2,22 @@ module NextUI.NextUI
   ( Theme
   , UseNextTheme
   , UseTheme
+  , avatar
   , button
   , buttonGroup
   , card
   , cardBody
+  , cardDivider
   , cardFooter
   , cardHeader
   , col
   , container
   , createTheme
+  , dropdown
+  , dropdownButton
+  , dropdownItem
+  , dropdownMenu
+  , dropdownTrigger
   , grid
   , gridContainer
   , input
@@ -27,6 +34,9 @@ module NextUI.NextUI
   , nextThemesProvider
   , nextUIProvider
   , pagination
+  , popover
+  , popoverContent
+  , popoverTrigger
   , row
   , sendButton
   , spacer
@@ -86,6 +96,7 @@ foreign import card :: forall props. ReactComponent { | props }
 foreign import cardHeader :: forall props. ReactComponent { | props }
 foreign import cardBody :: forall props. ReactComponent { | props }
 foreign import cardFooter :: forall props. ReactComponent { | props }
+foreign import cardDivider :: forall props. ReactComponent { | props }
 
 foreign import pagination :: forall props. ReactComponent { | props }
 
@@ -97,6 +108,18 @@ foreign import navbarItem :: forall props. ReactComponent { | props }
 foreign import navbarToggle :: forall props. ReactComponent { | props }
 foreign import navbarCollapse :: forall props. ReactComponent { | props }
 foreign import navbarCollapseItem :: forall props. ReactComponent { | props }
+
+foreign import dropdown :: forall props. ReactComponent { | props }
+foreign import dropdownButton :: forall props. ReactComponent { | props }
+foreign import dropdownMenu :: forall props. ReactComponent { | props }
+foreign import dropdownItem :: forall props. ReactComponent { | props }
+foreign import dropdownTrigger :: forall props. ReactComponent { | props }
+
+foreign import avatar :: forall props. ReactComponent { | props }
+
+foreign import popover :: forall props. ReactComponent { | props }
+foreign import popoverContent :: forall props. ReactComponent { | props }
+foreign import popoverTrigger :: forall props. ReactComponent { | props }
 
 foreign import createTheme :: forall props. { | props } -> Effect Theme
 

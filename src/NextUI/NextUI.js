@@ -15,6 +15,9 @@ export {
   Loading as loading,
   useTheme as useTheme_,
   Navbar as navbar,
+  Dropdown as dropdown,
+  Avatar as avatar,
+  Popover as popover
 } from "@nextui-org/react";
 
 import {
@@ -23,7 +26,9 @@ import {
   NavBar,
   createTheme as createTheme_,
   Navbar,
-  Button
+  Button,
+  Dropdown,
+  Popover
 } from "@nextui-org/react";
 
 export { ThemeProvider as nextThemesProvider, useTheme as useNextTheme_ } from "next-themes";
@@ -38,6 +43,7 @@ export const card = Card;
 export const cardHeader = Card.Header;
 export const cardBody = Card.Body;
 export const cardFooter = Card.Footer;
+export const cardDivider = Card.Divider;
 
 export const navbarBrand = Navbar.Brand;
 export const navbarContent = Navbar.Content;
@@ -48,3 +54,11 @@ export const navbarCollapseItem = Navbar.CollapseItem;
 export const navbarCollapse = Navbar.Collapse;
 
 export const buttonGroup = Button.Group
+
+export const dropdownButton = Dropdown.Button
+export const dropdownMenu = Dropdown.Menu
+export const dropdownItem = Dropdown.Item
+export const dropdownTrigger = Dropdown.Trigger
+
+export const popoverTrigger = Popover.Trigger
+export const popoverContent = Popover.Content
