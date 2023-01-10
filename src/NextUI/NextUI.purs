@@ -38,7 +38,6 @@ module NextUI.NextUI
   , popoverContent
   , popoverTrigger
   , row
-  , sendButton
   , spacer
   , switch
   , text
@@ -80,8 +79,6 @@ foreign import gridContainer :: forall props. ReactComponent { | props }
 foreign import spacer :: forall props. ReactComponent { | props }
 
 foreign import input :: forall props. ReactComponent { | props }
-
-foreign import sendButton :: forall props. ReactComponent { | props }
 
 foreign import textArea :: forall props. ReactComponent { | props }
 
