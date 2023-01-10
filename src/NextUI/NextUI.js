@@ -10,7 +10,6 @@ export {
   Textarea as textArea,
   Text as text,
   Link as link,
-  SendButton as sendButton,
   Pagination as pagination,
   Loading as loading,
   useTheme as useTheme_,
