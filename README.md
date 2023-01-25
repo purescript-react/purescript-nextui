@@ -2,7 +2,13 @@
 
 Bindings for [NextUI](https://nextui.org/).
 
-# Usage
+## Installation
+
+```bash
+spago install nextui
+```
+
+## Usage
 
 Create a dark and light theme, see https://nextui.org/docs/theme/default-theme: 
 ```purescript
