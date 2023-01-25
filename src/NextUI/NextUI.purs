@@ -46,14 +46,12 @@ module NextUI.NextUI
   , themeIsDark
   , useNextTheme
   , useTheme
-  )
-  where
+  ) where
 
 import Prelude
 
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, runEffectFn1)
-import Prim.Row (class Lacks)
 import React.Basic.Hooks (Hook, JSX, ReactComponent, unsafeHook)
 
 foreign import data Theme :: Type
@@ -128,14 +126,14 @@ foreign import themeIsDark :: Theme -> Boolean
 
 foreign import useTheme_ :: Effect { theme :: Theme, isDark :: Boolean }
 
-useTheme :: Hook (UseTheme) { theme :: Theme, isDark :: Boolean  }
+useTheme :: Hook (UseTheme) { theme :: Theme, isDark :: Boolean }
 useTheme = unsafeHook useTheme_
 
 foreign import data UseTheme :: Type -> Type
 
 foreign import useNextTheme_ :: Effect { theme :: Theme, isDark :: Boolean, setTheme :: EffectFn1 String Unit }
 
-useNextTheme :: Hook (UseNextTheme) { theme :: Theme, isDark :: Boolean, setTheme :: String -> Effect Unit  }
+useNextTheme :: Hook (UseNextTheme) { theme :: Theme, isDark :: Boolean, setTheme :: String -> Effect Unit }
 useNextTheme = unsafeHook useNextTheme_ <#> \{ theme, isDark, setTheme } -> { theme, isDark, setTheme: runEffectFn1 setTheme }
 
 foreign import data UseNextTheme :: Type -> Type
